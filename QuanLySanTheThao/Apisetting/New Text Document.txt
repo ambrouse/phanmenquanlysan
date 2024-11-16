@@ -1,0 +1,17 @@
+
+
+url backend : 
+user/api/v1/...
+admin/api/v1/...
+
+Api form 
+
+{
+	respone_ : 200,
+	desription_: requet login ok,
+	result: <T> - user{
+				name: "",
+				password:""			
+			}
+} 
+
