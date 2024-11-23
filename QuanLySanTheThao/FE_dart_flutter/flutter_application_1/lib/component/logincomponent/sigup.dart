@@ -33,10 +33,12 @@ Future<String> funcSigup(String phone_, String name_, String password_, String e
 
 class sigup extends StatefulWidget {
   String nofitication_ = "không được bỏ trống thông tin nhé";
-  var emailHistory_ = null;
-  var passwordHistory_ = null;
-  var phoneHistory_ = null;
-  var nameHistory_ = null;
+  var emailHistory_;
+  var passwordHistory_;
+  var phoneHistory_;
+  var nameHistory_;
+
+  sigup({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -80,7 +82,7 @@ class sigupSetting extends State<sigup> {
             color: Color.fromARGB(255, 217, 217, 217),
             child: Stack(
               children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   child: Column(
                     children: [
@@ -102,15 +104,15 @@ class sigupSetting extends State<sigup> {
                         alignment: Alignment.center,
                         child: Column(
                           children: [
-                            Container(
+                            SizedBox(
                               width: (width_/1.2),
                               child: TextField(
                                 controller: emailValue_,
                                 decoration: const InputDecoration(
-                                    border: const OutlineInputBorder(),
-                                    contentPadding: const EdgeInsets.only(top: 1,bottom: 1,left: 20),
+                                    border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.only(top: 1,bottom: 1,left: 20),
                                     hintText: "Email",
-                                    hintStyle: const TextStyle(
+                                    hintStyle: TextStyle(
                                         fontSize: 15
                                     )
                                 ),
@@ -122,10 +124,10 @@ class sigupSetting extends State<sigup> {
                               child:  TextField(
                                 controller: phoneValue_,
                                 decoration: const InputDecoration(
-                                    border: const OutlineInputBorder(),
-                                    contentPadding: const EdgeInsets.only(top: 1,bottom: 1,left: 20),
+                                    border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.only(top: 1,bottom: 1,left: 20),
                                     hintText: "Số điện thoại",
-                                    hintStyle: const TextStyle(
+                                    hintStyle: TextStyle(
                                         fontSize: 15
                                     )
                                 ),
@@ -137,10 +139,10 @@ class sigupSetting extends State<sigup> {
                               child:  TextField(
                                 controller: passwordValue_,
                                 decoration: const InputDecoration(
-                                    border: const OutlineInputBorder(),
+                                    border: OutlineInputBorder(),
                                     contentPadding: EdgeInsets.only(top: 1,bottom: 1,left: 20),
                                     hintText: "Mật khẩu",
-                                    hintStyle: const TextStyle(
+                                    hintStyle: TextStyle(
                                         fontSize: 15
                                     )
                                 ),
@@ -152,10 +154,10 @@ class sigupSetting extends State<sigup> {
                               child:  TextField(
                                 controller: nameValue_,
                                 decoration: const InputDecoration(
-                                    border: const OutlineInputBorder(),
+                                    border: OutlineInputBorder(),
                                     contentPadding: EdgeInsets.only(top: 1,bottom: 1,left: 20),
                                     hintText: "Tên người dùng",
-                                    hintStyle: const TextStyle(
+                                    hintStyle: TextStyle(
                                         fontSize: 15
                                     )
                                 ),
@@ -176,12 +178,12 @@ class sigupSetting extends State<sigup> {
                                           Navigator.pushNamed(context, "/user/login");
                                         },
                                         style: ButtonStyle(
-                                            padding: MaterialStateProperty.all<EdgeInsets>(
+                                            padding: WidgetStateProperty.all<EdgeInsets>(
                                                 const EdgeInsets.only(
                                                     left: 40,right: 40,top: 0,bottom: 0
                                                 )
                                             ),
-                                            shape: MaterialStateProperty.all(
+                                            shape: WidgetStateProperty.all(
                                                 const RoundedRectangleBorder(
                                                     borderRadius: BorderRadius.all(Radius.circular(10))
                                                 )
@@ -197,16 +199,16 @@ class sigupSetting extends State<sigup> {
                                     ),
                                     ElevatedButton(
                                         onPressed: (){
-                                          if(!emailValue_.text.isEmpty){
+                                          if(emailValue_.text.isNotEmpty){
                                             widget.emailHistory_ = emailValue_.text;
                                           }
-                                          if(!passwordValue_.text.isEmpty){
+                                          if(passwordValue_.text.isNotEmpty){
                                             widget.passwordHistory_ = passwordValue_.text;
                                           }
-                                          if(!nameValue_.text.isEmpty){
+                                          if(nameValue_.text.isNotEmpty){
                                             widget.nameHistory_ = nameValue_.text;
                                           }
-                                          if(!phoneValue_.text.isEmpty){
+                                          if(phoneValue_.text.isNotEmpty){
                                             widget.phoneHistory_ = phoneValue_.text;
                                           }
                                           funcSigup(phoneValue_.text,
@@ -219,12 +221,12 @@ class sigupSetting extends State<sigup> {
                                               });
                                           },
                                         style: ButtonStyle(
-                                            padding: MaterialStateProperty.all<EdgeInsets>(
+                                            padding: WidgetStateProperty.all<EdgeInsets>(
                                                 const EdgeInsets.only(
                                                     left: 40,right: 40,top: 0,bottom: 0
                                                 )
                                             ),
-                                            shape: MaterialStateProperty.all(
+                                            shape: WidgetStateProperty.all(
                                                 const RoundedRectangleBorder(
                                                     borderRadius: BorderRadius.all(Radius.circular(10))
                                                 )

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/navbar/navbar.dart';
 
 class home extends StatefulWidget{
+  const home({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return homeSetting();
@@ -15,6 +17,9 @@ class homeSetting extends State<home>{
   Widget build(BuildContext context) {
     final width_ = MediaQuery.of(context).size.width;
     final height_ = MediaQuery.of(context).size.height;
+    final currentCount = (MediaQuery.of(context).size.width ~/ 250).toInt();
+
+    
     return SafeArea(
       child: Scaffold(
         body:Container(
@@ -39,10 +44,10 @@ class homeSetting extends State<home>{
                 child: ListView(
                   padding: EdgeInsets.only(top: 30,left: (width_/7)),
                   children: [
-                    Container(
+                    SizedBox(
                       height: 50,
                       // color: Colors.black,
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                             "Liên hệ : ",
@@ -54,7 +59,7 @@ class homeSetting extends State<home>{
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Chi nhánh 1 : .................",
@@ -66,7 +71,7 @@ class homeSetting extends State<home>{
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Chi nhánh 2 : .................",
@@ -78,7 +83,7 @@ class homeSetting extends State<home>{
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Chi nhánh 3 : .................",
@@ -90,7 +95,7 @@ class homeSetting extends State<home>{
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Chi nhánh 4 : .................",
@@ -102,7 +107,7 @@ class homeSetting extends State<home>{
                     ),
                     Container(
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Chi nhánh 5 : .................",
@@ -116,7 +121,7 @@ class homeSetting extends State<home>{
                       height: 50,
                       margin: EdgeInsets.only(top: 30),
                       // color: Colors.black,
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Tổng quan công ty : ",
@@ -129,7 +134,7 @@ class homeSetting extends State<home>{
                     Container(
                       // height: 30,
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nisi quaerat recusandae porro. Nam eveniet atque sapiente. Perspiciatis placeat commodi qui quam, autem repudiandae doloremque, ea minus consequatur cumque tempora.",
@@ -143,7 +148,7 @@ class homeSetting extends State<home>{
                       height: 50,
                       margin: EdgeInsets.only(top: 30),
                       // color: Colors.black,
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Các dịch vụ :",
@@ -156,7 +161,7 @@ class homeSetting extends State<home>{
                     Container(
                       // height: 30,
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Thuê sân ....",
@@ -169,7 +174,7 @@ class homeSetting extends State<home>{
                     Container(
                       // height: 30,
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Thuê sân ....",
@@ -182,7 +187,7 @@ class homeSetting extends State<home>{
                     Container(
                       // height: 30,
                       padding: EdgeInsets.only(left: 30),
-                      child: Container(
+                      child: SizedBox(
                         width:width_,
                         child: const Text(
                           "Thuê sân ....",

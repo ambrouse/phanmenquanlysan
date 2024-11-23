@@ -14,6 +14,6 @@ import java.util.List;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class YardDetailRespone {
-    YardEntity yardEntity_;
-    List<YardRentEntity> yardRentEntitie_;
+    List<YardDetailEntityRespone> yardEntity_;
+    List<YardRentDetailRespone> yardRentEntitie_;
 }

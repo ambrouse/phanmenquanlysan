@@ -4,14 +4,15 @@ package com.example.androidapp_yardmanager.qbao.model.respone;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Data
+import java.time.LocalDateTime;
+
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class YardRespone {
-    String id_;
-    String nameYard_;
-    String addrestYard_;
-    String StatusYard_;
+public class YardRentDetailRespone {
+    String timeRent_;
+    LocalDateTime timeStartRent_;
+    LocalDateTime timeEndRent_;
 }

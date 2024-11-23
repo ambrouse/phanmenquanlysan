@@ -10,10 +10,16 @@ import java.util.List;
 
 public interface YardRepo extends JpaRepository<YardEntity,String> {
 
-    @Query(value = "select * " +
-            "from yard_ u " +
-            "where u.name_ like %:nameYard_%  and u.address_ like %:addressYard_% and u.status_ like %:statusYard_%",nativeQuery = true)
+    @Query(value = "select u.id_, u.name_ as name_, a.name_ as addressName_, u.status_ as status_ " +
+            "from yard_ u, address_yard_ a " +
+            "where (u.name_ like %:nameYard_%  and u.id_address_ like %:addressYard_% and u.status_ like %:statusYard_% ) and u.id_address_ = a.id_ ",nativeQuery = true)
     List<Tuple> searchYard(@Param("nameYard_") String name,
                            @Param("addressYard_") String address,
                            @Param("statusYard_") String status);
+
+
+    @Query(value = "select u.name_, a.name_, u.status_ " +
+            "from yard_ u, address_yard_ a " +
+            "where u.id_ = :idYard_ and a.id_ = u.id_address_ ",nativeQuery = true)
+    List<Tuple> yarddetail(@Param("idYard_") String idYard_);
 }

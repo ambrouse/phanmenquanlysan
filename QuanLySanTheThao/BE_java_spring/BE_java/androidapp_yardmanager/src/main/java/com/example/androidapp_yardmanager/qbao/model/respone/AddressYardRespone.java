@@ -9,9 +9,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class YardRespone {
-    String id_;
-    String nameYard_;
-    String addrestYard_;
-    String StatusYard_;
+public class AddressYardRespone {
+    String idAddress_;
+    String nameAddress_;
 }

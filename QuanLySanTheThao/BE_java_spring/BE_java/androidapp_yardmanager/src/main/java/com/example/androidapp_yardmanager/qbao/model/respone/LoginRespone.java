@@ -11,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class LoginRespone {
     String token_;
+    String idUser_;
     boolean checkLogin_;
     String desriptions_;
 }

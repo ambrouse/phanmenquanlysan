@@ -4,14 +4,14 @@ package com.example.androidapp_yardmanager.qbao.model.respone;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class YardRespone {
-    String id_;
-    String nameYard_;
-    String addrestYard_;
-    String StatusYard_;
+public class UserInfoRespone {
+    String nameUser_;
+    String emailUser_;
+    String passwordUser_;
+    String phoneUser_;
 }

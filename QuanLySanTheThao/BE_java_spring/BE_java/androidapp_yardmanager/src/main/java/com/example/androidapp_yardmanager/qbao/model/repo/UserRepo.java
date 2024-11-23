@@ -23,4 +23,15 @@ public interface UserRepo extends JpaRepository<UserEnitty,String> {
             "where u.phone_ = :phone_ or u.mail_ = :email_ ",nativeQuery = true)
     String checkLogin(@Param("phone_") String phone_,
                       @Param("email_") String email_);
+
+    @Query(value = "select id_ " +
+            "from user_ u " +
+            "where  u.phone_ = :loginName_ " +
+            "or u.mail_ = :loginName_",nativeQuery = true)
+    String getIdUser(@Param("loginName_") String loginName_);
+
+    @Query(value = "select u.name_, u.mail_, password_, u.phone_ " +
+            "from user_ u " +
+            "where u.id_ = :idUser_",nativeQuery = true)
+    Tuple getUserById(@Param("idUser_") String idUser_);
 }

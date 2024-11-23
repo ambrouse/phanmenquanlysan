@@ -62,6 +62,7 @@ public class UserLoginService {
     public ApiRespone<LoginRespone> login(LoginRequest loginRequest){
         try {
             String passLoginFind_ = userRepo.login(loginRequest.getLoginName_());
+            String idLoginFind_ = userRepo.getIdUser(loginRequest.getLoginName_());
 
             if(passLoginFind_ != null){
                 PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -74,6 +75,7 @@ public class UserLoginService {
                             .result_(LoginRespone.builder()
                                     .checkLogin_(true)
                                     .token_(token_)
+                                    .idUser_(idLoginFind_)
                                     .desriptions_("Đăng nhập thành công")
                                     .build())
                             .build();

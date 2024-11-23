@@ -51,6 +51,7 @@ CREATE TABLE [rent_yard_] (
   [id_yard_] varchar(60),
   [start_day_] datetime,
   [end_day_] datetime,
+rent_time_ varchar(255),
   [status_] nvarchar(60),
   [status_delete_] tinyint,
   [day_delete_] datetime

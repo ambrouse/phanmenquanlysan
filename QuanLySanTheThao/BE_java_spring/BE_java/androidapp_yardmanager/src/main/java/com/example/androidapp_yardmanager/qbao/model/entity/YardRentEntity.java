@@ -34,22 +34,21 @@ public class YardRentEntity {
     String idYard_;
 
     @NotNull(message = "không được để trống ngày thuê của người dùng ")
-    @NotEmpty(message = "không được để trống ngày thuê của người dùng ")
     @Column(name = "start_day_")
     LocalDateTime startDay_;
 
     @NotNull(message = "không được để trống ngày trả sân của người dùng ")
-    @NotEmpty(message = "không được để trống ngày trả sân của người dùng ")
     @Column(name = "end_day_")
     LocalDateTime endDay_;
 
-    @NotNull(message = "không được để trống trạng thái thanh toán của người dùng  ")
-    @NotEmpty(message = "không được để trống trạng thái thanh toán của người dùng ")
     @Column(name = "status_")
     String status_;
 
+    @Column(name = "rent_time_")
+    String rentTime_;
+
     @Column(name = "status_delete_")
-    String statusDelete_;
+    int statusDelete_;
 
     @Column(name = "day_delete_")
     LocalDateTime dayDelete_;

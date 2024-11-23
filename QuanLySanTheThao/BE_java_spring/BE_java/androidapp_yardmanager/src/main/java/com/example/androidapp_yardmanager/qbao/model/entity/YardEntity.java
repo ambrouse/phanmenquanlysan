@@ -28,9 +28,9 @@ public class YardEntity {
     String name_;
 
     @NotNull(message = "Không được để trống địa của sân")
-    @NotEmpty(message = "Không được để trống chỉ của sân")
-    @Column(name = "address_")
-    String address_;
+    @NotEmpty(message = "Không được để trống địa chỉ của sân")
+    @Column(name = "id_address_")
+    String idAddress_;
 
     @NotNull(message = "Không được để trống trạng thái của sân")
     @NotEmpty(message = "Không được để trống trạng thái của sân")
