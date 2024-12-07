@@ -52,7 +52,7 @@ CREATE TABLE [rent_yard_] (
   [start_day_] datetime,
   [end_day_] datetime,
 rent_time_ varchar(255),
-  [status_] nvarchar(60),
+  [status_] nvarchar(255),
   [status_delete_] tinyint,
   [day_delete_] datetime
 )
@@ -62,8 +62,10 @@ CREATE TABLE [complain_] (
   [id_] varchar(60) PRIMARY KEY,
   [id_user_] varchar(60),
   [content_] text,
+  title_ nvarchar(255),
   [status_] nvarchar(255),
   [status_delete_] tinyint,
+  day_complain_ daytime,
   [day_delete_] datetime
 )
 GO

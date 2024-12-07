@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RentYardWithUserRespone {
+    String id;
     String nameYard_;
     String addressYard_;
     String statusYard_;

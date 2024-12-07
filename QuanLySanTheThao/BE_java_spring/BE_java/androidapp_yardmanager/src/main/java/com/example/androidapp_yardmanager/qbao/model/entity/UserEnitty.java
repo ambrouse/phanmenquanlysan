@@ -30,17 +30,15 @@ public class UserEnitty {
     String name_;
     @CheckGmailString(message = "Gmail không đúng định dạng")
     @NotNull(message = "Gmail không được để trống")
-    @NotEmpty(message = "Tên người dùng không được rỗng")
+    @NotEmpty(message = "Gmail người dùng không được rỗng")
     @Column(name = "mail_",length = 255)
     String email_;
     @NotNull(message = "Số điện thoại không được để trống")
-    @NotEmpty(message = "Tên người dùng không được rỗng")
+    @NotEmpty(message = "Số điện thoại người dùng không được rỗng")
     @Size(max = 10,min = 10, message = "Số điện thoại sai định dạng")
     @Column(name = "phone_",length = 10)
     String phone_;
-    @NotNull(message = "Mật khẩu không được để trống")
-    @NotEmpty(message = "Tên người dùng không được rỗng")
-    @Size(min = 8, message = "Mật khẩu phải trên 8 kí tự")
+
     @Column(name = "password_",length = 255)
     String password_;
     @Column(name = "status_delete_",length = 1)

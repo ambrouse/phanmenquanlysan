@@ -1,12 +1,8 @@
-import 'dart:io';
 
 import 'package:date_field/date_field.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/navbar/navbar.dart';
-import 'package:intl/intl_standalone.dart'
-    if (dart.library.html) 'package:intl/intl_browser.dart';
-import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DetailYard extends StatefulWidget {

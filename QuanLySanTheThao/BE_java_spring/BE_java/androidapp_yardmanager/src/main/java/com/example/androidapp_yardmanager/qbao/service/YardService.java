@@ -108,7 +108,7 @@ public class YardService {
 
         }
 
-        yardRentEntityRequest_.setStatus_("0");
+        yardRentEntityRequest_.setStatus_("Chưa thanh toán hoặc chủ sân chưa cập nhật (trạng thái sẽ được cập nhật lâu nhất 30p sau khi thanh toán).");
         yardRentEntityRequest_.setStatusDelete_(1);
         int startHours_ = yardRentEntityRequest_.getStartDay_().getHour();
         int endHours_ = yardRentEntityRequest_.getEndDay_().getHour();

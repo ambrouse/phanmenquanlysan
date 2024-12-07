@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/component/logincomponent/login.dart';
 import 'package:flutter_application_1/component/logincomponent/sigup.dart';
+import 'package:flutter_application_1/component/usercomponent/complaint.dart';
+import 'package:flutter_application_1/component/usercomponent/edituser.dart';
+import 'package:flutter_application_1/component/usercomponent/userprofile.dart';
+import 'package:flutter_application_1/component/usercomponent/userrentyard.dart';
 import 'package:flutter_application_1/component/yartcomponent/detailyard.dart';
 import 'package:flutter_application_1/component/yartcomponent/home.dart';
 import 'package:flutter_application_1/component/yartcomponent/listyard.dart';
@@ -24,6 +28,10 @@ class MyApp extends StatelessWidget {
         "/user/list_yard": (context) => Listyard(),
         "/user/detail_yard": (context) => DetailYard(),
         "/user/payment": (context) => Paymentrenyard(),
+        "/user/user_profile": (context) => Userprofile(),
+        "/user/user_edit": (context) => Edituser(),
+        "/user/user_rent_yard": (context) => Userrentyard(),
+        "/user/user_complaint": (context) => Complaint(),
       },
       home: login(),
       debugShowCheckedModeBanner: false,

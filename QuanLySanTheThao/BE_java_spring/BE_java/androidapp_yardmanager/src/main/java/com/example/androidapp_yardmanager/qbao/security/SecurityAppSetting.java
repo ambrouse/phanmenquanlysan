@@ -27,7 +27,7 @@ import javax.crypto.spec.SecretKeySpec;
 @EnableMethodSecurity
 public class SecurityAppSetting {
     private final String[] link_not_securiry = {"/user/api/v1/test_server","/user/api/v1/login","/user/api/v1/sigup", "/user/api/v1/search_yard","/user/api/v1/yard_detail/{id}",
-    "/user/api/v1/address_yard","user/api/v1/rentyard","user/api/v1/user/{idUser_}","user/api/v1/user","user/api/v1/rentyard/{idUser_}"};
+    "/user/api/v1/address_yard","user/api/v1/rentyard","user/api/v1/user/{idUser_}","user/api/v1/user","user/api/v1/rentyard/{idUser_}","user/api/v1/complain/{idUser_}","user/api/v1/complain"};
 
     @Value("${jwt.create_token_key}")
     private String sereckey;

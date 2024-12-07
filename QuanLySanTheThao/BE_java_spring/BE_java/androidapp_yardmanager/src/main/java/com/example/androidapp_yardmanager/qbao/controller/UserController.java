@@ -1,22 +1,19 @@
 package com.example.androidapp_yardmanager.qbao.controller;
 
 import com.example.androidapp_yardmanager.qbao.ApiSetting.ApiRespone;
+import com.example.androidapp_yardmanager.qbao.model.entity.ComplainEntity;
 import com.example.androidapp_yardmanager.qbao.model.entity.UserEnitty;
 import com.example.androidapp_yardmanager.qbao.model.entity.YardRentEntity;
 import com.example.androidapp_yardmanager.qbao.model.request.LoginRequest;
 import com.example.androidapp_yardmanager.qbao.model.respone.*;
 import com.example.androidapp_yardmanager.qbao.service.*;
-import jakarta.persistence.Tuple;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -34,6 +31,8 @@ public class UserController {
     UserService userService;
     @Autowired
     RentYardService rentYardService;
+    @Autowired
+    ComplainService complainService;
 
     @GetMapping("/test_server")
     public ApiRespone<List<String>> testSerVer(@RequestParam(name = "time",required = false) LocalDateTime time){
@@ -104,6 +103,24 @@ public class UserController {
     public  ApiRespone<List<RentYardWithUserRespone>> getRentYardWithUser(@PathVariable("idUser_") String idUser_){
 
         return rentYardService.getRentYardByUser(idUser_);
+    }
+
+    @DeleteMapping("/rentyard/{idRentYard_}")
+    public  ApiRespone<String> deleteRentYard(@PathVariable("idRentYard_") String idRentYard_){
+
+        return rentYardService.deleteRentYard(idRentYard_);
+    }
+
+    @RequestMapping("/complain/{idUser_}")
+    public  ApiRespone<List<ComplainRespone>> getAllComplaintUser(@PathVariable("idUser_") String idUser_){
+
+        return complainService.getAllComplain(idUser_);
+    }
+
+    @PostMapping("/complain")
+    public  ApiRespone<String> createComplain(@RequestBody ComplainEntity complainEntityRequest_){
+
+        return complainService.createComplain(complainEntityRequest_);
     }
 
 

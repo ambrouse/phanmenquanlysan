@@ -41,7 +41,7 @@ class NavbarSetting extends State<Navbar> {
             Container(
                 child: IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, "/user/login");
+                      Navigator.pushNamed(context, "/user/user_profile");
                     },
                     color: Colors.white,
                     icon: const Icon(Icons.account_box))),
