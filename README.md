@@ -6,9 +6,6 @@
     <link rel="icon" type="image/x-icon" href="/style/snowflake-14-xxl.png">
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
-    <script src="./style/jq.js"></script>
-    <script src="./style/style.js"></script>
-    <title>CV Quốc Bảo</title>
 </head>
 <body>
    <div class="main">
